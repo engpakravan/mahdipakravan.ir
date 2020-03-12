@@ -19,12 +19,12 @@ class navBar extends React.Component{
                 <Navbar.Toggle aria-controls="navHeader"/>
                 
                 <Navbar.Collapse id="navHeader">
-                    <Nav className="mr-4">
+                    <Nav className="mr-lg-4 text-center mt-3 mt-lg-0">
                         {
                             this.props.list.map((val)=>{
                                 return <Nav.Link href={val.href} key={
                                     //TODO Get it From Server
-                                    'navHeader_'+Math.floor(Math.random() * 100)}
+                                    'navHeader_'+Math.floor(Math.random() * 9849489)}
                                 >{val.name}</Nav.Link>
                             })
                         }
