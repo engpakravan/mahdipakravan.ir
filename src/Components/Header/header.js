@@ -3,80 +3,68 @@ import React from 'react'
 import NavBar from './navBar'
 import {Container , Col , Row} from 'react-bootstrap'
 
-class Header extends React.Component{
+import {ThemeContext} from '../../Context/ThemeContext'
 
-    getList(){
-        return [
-            {
-                id : 1 , 
-                name : 'خانه' ,
-                href : "/home"
-            },
-            {
-                id : 2 , 
-                name : 'چطوری کار میکنیم ؟' ,
-                href : "/howWorking"
-            },
-            {
-                id : 3 , 
-                name : 'توانایی ها' ,
-                href : "/skills"
-            },
-            {
-                id : 4 , 
-                name : 'نمونه کار ها' ,
-                href : "/portfoilo"
-            },
-            {
-                id : 5 , 
-                name : 'تماس با ما' ,
-                href : "/contactMe"
-            }
-        ]
+class Header extends React.Component{
+    static contextType = ThemeContext
+    state = {
+        HeaderJumborton : this.context.Header.HeaderJumborton ,
+        Brand : this.context.Header.Brand , 
+        list : this.context.Header.list ,
+        Welcome : this.getComponent(this.context.Header.Welcome) ,
+        what_can_i_do : this.getComponent(this.context.Header.what_can_i_do) ,
+        header_long_text : this.context.Header.header_long_text
     }
 
+    getComponent(element){
+        return <div dangerouslySetInnerHTML={{__html : element}} />
+    }
+
+    getProgrammerImage(){
+        return <img src={this.context.Header.programmerImage} className="img-fluid" alt=""/>
+    }
+    
     render(){
         return (
-            this.props.HeaderJumborton ? (
-                // Show Header With HeaderJumborton
+            this.state.HeaderJumborton ? (
                 <header>
-                <NavBar title={['وبسایت' , 'مهدی پاکروان']} list={this.getList()} />
+                <NavBar title={this.state.Brand} list={this.state.list} />
                 <Container>
                     <Row className="mt-5 d-flex justify-content-lg-between">
                         <Col lg={5} className="d-flex flex-column justify-content-end d-lg-block">
                             <div className="img-holder" id="imageHeader">
-                                <img src={require("../../Images/Programmer.png")} className="img-fluid" alt=""/>
+                                {this.getProgrammerImage()}
                             </div>
                         </Col>
 
                         <Col id="headerContent" lg={7} className="pr-md-5 pt-lg-4 d-flex flex-column align-items-center d-lg-block">
-                            <h2 class="pt-5">سلام من <span class="text-red">مهدی</span> هستم !</h2>
-                            <h5 class="pt-3">میتونم با <kbd>جاوااسکریپت</kbd> آرزو های شما رو بسازم !</h5> 
-                            <p class="pt-3 text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم استلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                            <div class="social pt-2 d-flex justify-content-center d-lg-block">
-                                <a href="#" class="social-item">
-                                    <span class="ti-1x ti-facebook"></span>
+                            <h2 className="pt-5">{this.state.Welcome}</h2>
+                            <h5 className="pt-3">{this.state.what_can_i_do}</h5> 
+                            <p className="pt-3 text-justify">{this.state.header_long_text}</p>
+                            {/* <div className="social pt-2 d-flex justify-content-center d-lg-block">
+                                <a href="#" className="social-item">
+                                    <span className="ti-1x ti-facebook"></span>
                                 </a>
-                                <a href="#" class="social-item">
-                                    <span class="ti-1x ti-linkedin"></span>
+                                <a href="#" className="social-item">
+                                    <span className="ti-1x ti-linkedin"></span>
                                 </a>
-                                <a href="#" class="social-item">
-                                    <span class="ti-1x ti-instagram"></span>
+                                <a href="#" className="social-item">
+                                    <span className="ti-1x ti-instagram"></span>
                                 </a>
-                                <a href="#" class="social-item">
-                                    <span class="ti-1x ti-twitter"></span>
+                                <a href="#" className="social-item">
+                                    <span className="ti-1x ti-twitter"></span>
                                 </a>
-                                <a href="#" class="social-item">
-                                    <span class="ti-1x ti-github"></span>
+                                <a href="#" className="social-item">
+                                    <span className="ti-1x ti-github"></span>
                                 </a>
-                            </div>
+                            </div> */}
                         </Col>
                     </Row>
                 </Container>
                 </header>
             ) : (
                 <header>
-                <NavBar title={['وبسایت' , 'مهدی پاکروان بدون']} list={this.getList()} />
+                    <NavBar title={this.context.Header.Brand} list={this.context.Header.list} />
                 </header>
             )
         )

@@ -73,6 +73,9 @@ a.nav-link:hover{
   header{
       padding-bottom: 1rem;
   }   
+  .navbar-collapse{
+    margin: 0 auto;
+  }
 }
 
 #headerRow{
