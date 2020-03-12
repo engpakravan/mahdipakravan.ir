@@ -1,44 +1,37 @@
-import React , {useContext , useState} from 'react'
+import React , {useContext } from 'react'
 import {Container} from 'react-bootstrap'
 
 import HowWorkingElement from './howWorking_Element'
 
 import {ThemeContext} from '../../../Context/ThemeContext'
-function HowWorking(props){
+function HowWorking(){
+
+    let Comp_To_Html = (element)=>{
+        return <div dangerouslySetInnerHTML={{__html : element}} />
+    }
     
     const context = useContext(ThemeContext).Sections.howWorking
-    console.log(context)
     return (
         <div className="section__howWorking pb-4">
             <Container>
                 <h4 className="text-center">{context.title}</h4>
-                <h6 className="text-center pt-2">یک وبلاگ باحال هم داریم که <kbd>RealTime</kbd> هم هستش !</h6>
+                <h6 className="text-center pt-2">{Comp_To_Html(context.title_meta)}</h6>
                 
-                <HowWorkingElement display={
-                    {
-                        decoration : "img_right" , 
-                        stepText : "مرحله اول" ,
-                        hyperText : "در مورد کسب و کارتون صحبت میکنیم !" ,
-                        bodyText : "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشدلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد"
-                    }
-                } />
-                <HowWorkingElement display={
-                    {
-                        decoration : "img_left" , 
-                        stepText : "مرحله دوم" ,
-                        hyperText : "در مورد کسب و کارتون صحبت میکنیم !" ,
-                        bodyText : "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشدلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد"
-                    }
-                } />
-
-                <HowWorkingElement display={
-                    {
-                        decoration : "img_right" , 
-                        stepText : "مرحله سوم" ,
-                        hyperText : "در مورد کسب و کارتون صحبت میکنیم !" ,
-                        bodyText : "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشدلورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد"
-                    }
-                } />
+                {
+                    context.elements.map((val) => {
+                        return (
+                            <HowWorkingElement display={
+                            {
+                                decoration : val.decoration , 
+                                stepText : val.stepText ,
+                                hyperText : val.hyperText ,
+                                bodyText : val.bodyText ,
+                                key : val.key
+                            }
+                            } />
+                        )
+                    })
+                }
                 
             </Container>
         </div>
