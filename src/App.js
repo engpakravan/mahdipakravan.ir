@@ -9,6 +9,7 @@ import './App.css';
 //Import Component Here
 import Header from './Components/Header/header'
 import HowWorking from './Components/sections/howWorking/HowWorkings'
+import Skills from './Components/sections/skills/skillsSection'
 
 import ThemeContext from './Context/ThemeContext'
 import MethodContext from './Context/MethodsContext'
@@ -16,6 +17,7 @@ import MethodContext from './Context/MethodsContext'
 class App extends React.Component {
   state = require('./defaultState')
 
+  //TODO Get it In The Reducer
   Comp_To_Html(element){
     return <div dangerouslySetInnerHTML={{__html : element}} />
   }
@@ -29,6 +31,7 @@ class App extends React.Component {
         <ThemeContext.Provider value={this.state}>
           <Header/>
           <HowWorking />
+          <Skills />
         </ThemeContext.Provider>
       </MethodContext.Provider>
       </div>

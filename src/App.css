@@ -145,9 +145,8 @@ a.nav-link:hover{
 */
 
 .section__ability{
-  margin-top: 5rem;
   padding:2rem 0 ;
-  background-image: repeating-radial-gradient( rgb(240, 240, 240) , rgb(253, 251, 251));
+  background-image: repeating-radial-gradient( rgb(255, 255, 255) , rgb(253, 251, 251));
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
