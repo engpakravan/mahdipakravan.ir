@@ -10,17 +10,27 @@ import './App.css';
 import Header from './Components/Header/header'
 import HowWorking from './Components/sections/howWorking/HowWorkings'
 
-import {ThemeContext} from './Context/ThemeContext'
+import ThemeContext from './Context/ThemeContext'
+import MethodContext from './Context/MethodsContext'
+
 class App extends React.Component {
   state = require('./defaultState')
 
+  Comp_To_Html(element){
+    return <div dangerouslySetInnerHTML={{__html : element}} />
+  }
+  
   render(){
     return (
       <div className="App">
+      <MethodContext.Provider value={{
+        Comp_To_Html : this.Comp_To_Html.bind(this)
+      }}>
         <ThemeContext.Provider value={this.state}>
           <Header/>
           <HowWorking />
         </ThemeContext.Provider>
+      </MethodContext.Provider>
       </div>
     );
   }
