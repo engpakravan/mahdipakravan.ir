@@ -1,5 +1,5 @@
 import React , { useState , useContext} from 'react'
-import {Container , Row , Col} from 'react-bootstrap'
+import {Container , Row} from 'react-bootstrap'
 
 import SkillsItem from './skillsItem'
 
@@ -9,9 +9,7 @@ import FuncContext from '../../../Context/MethodsContext'
 function Skills(){
     const Context = useContext(ThemeContext).Sections.skills
     const Methods = useContext(FuncContext)
-    const [stateSkills , setStateSkills] = useState(Context)
-
-    console.log(stateSkills)
+    const [stateSkills] = useState(Context)
     return (
         <div className="section__ability">
             <Container>

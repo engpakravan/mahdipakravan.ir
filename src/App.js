@@ -10,6 +10,7 @@ import './App.css';
 import Header from './Components/Header/header'
 import HowWorking from './Components/sections/howWorking/HowWorkings'
 import Skills from './Components/sections/skills/skillsSection'
+import Portfoilo from './Components/sections/portfoilo/PortfoiloSection'
 
 import ThemeContext from './Context/ThemeContext'
 import MethodContext from './Context/MethodsContext'
@@ -32,6 +33,7 @@ class App extends React.Component {
           <Header/>
           <HowWorking />
           <Skills />
+          <Portfoilo/>
         </ThemeContext.Provider>
       </MethodContext.Provider>
       </div>

@@ -36,7 +36,7 @@ module.exports = {
     },
     Sections : {
         howWorking : {
-            title : 'چطوری با هم پروژه میسازیم ؟' , 
+            title : 'چطوری با هیسم پروژه میسازیم ؟' , 
             title_meta : 'یک وبلاگ باحال هم داریم که <kbd>RealTime</kbd> هم هستش !' ,
             elements : [
                 {
@@ -158,6 +158,35 @@ module.exports = {
                             percent : '20'
                         }
                     ]
+                }
+            ]
+        },
+        portfoilo : {
+            title : 'نمونه کار های من',
+            title_meta : 'یک وبلاگ باحال هم داریم که <kbd>RealTime</kbd> هم هستش !', 
+            Constant_data : {
+                myJobText : 'وظیفه ی من' , 
+                usesTechnologyText : 'تکنولوژی های استفاده شده : ' ,
+                descText : 'توضیحات بیشتر : '
+            },
+            elements : [
+                {
+                    order : 1 , 
+                    name : 'اپلیکیشن ماین تاکسی' , 
+                    job : 'توسعه ی سمت سرور (Back End) اپلیکیشن' , 
+                    technology : 'Nodejs - Mysql - Redis - MongoDB - Bootstrap - SocketIO - FireBase' , 
+                    desc : 'ماین، سامانه هوشمند حمل‌ونقل، پل ارتباطی میان کاربر مسافر و کاربر راننده است و راهکاری سریع و ساده برای درخواست خودرو و موتورسیکلت به شمار می‌رود. با درخواست خودرو یا موتورسیکلت در این اپلیکیشن، پس از مشخص کردن مبدا و مقصد، نزدیک‌ترین ماین به نشانی شما می‌آید. با ماین سفری ایمن، راحت و مقرون‌به‌صرفه را تجربه خواهید کرد.',
+                    decoration : 'img_left' ,
+                    imgSrc : "http://minetaxi.ir/assets/images/mine/faq.png"
+                } ,
+                {
+                    order : 2 , 
+                    name : 'اپلیکیشن ماین تاکسی' , 
+                    job : 'توسعه ی سمت سرور (Back End) اپلیکیشن' , 
+                    technology : 'Nodejs - Mysql - Redis - MongoDB - Bootstrap - SocketIO - FireBase' , 
+                    desc : 'ماین، سامانه هوشمند حمل‌ونقل، پل ارتباطی میان کاربر مسافر و کاربر راننده است و راهکاری سریع و ساده برای درخواست خودرو و موتورسیکلت به شمار می‌رود. با درخواست خودرو یا موتورسیکلت در این اپلیکیشن، پس از مشخص کردن مبدا و مقصد، نزدیک‌ترین ماین به نشانی شما می‌آید. با ماین سفری ایمن، راحت و مقرون‌به‌صرفه را تجربه خواهید کرد.',
+                    decoration : 'img_right' ,
+                    imgSrc : "http://minetaxi.ir/assets/images/mine/faq.png"
                 }
             ]
         }
