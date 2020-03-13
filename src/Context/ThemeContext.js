@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ThemeContext = React.createContext({
+const ThemeContext = React.createContext({
     Header : {
         HeaderJumborton : Boolean , 
         Brand : Array,
@@ -18,3 +18,5 @@ export const ThemeContext = React.createContext({
         }
     }
 })
+
+export default ThemeContext
