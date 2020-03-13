@@ -90,6 +90,10 @@ module.exports = {
                             percent : '20'
                         },
                         {
+                            name : 'nodejs' , 
+                            percent : '20'
+                        },
+                        {
                             name : 'GraphQL' , 
                             percent : '20'
                         },
@@ -116,6 +120,10 @@ module.exports = {
                             percent : '100'
                         },
                         {
+                            name : 'HTML' , 
+                            percent : '100'
+                        },
+                        {
                             name : 'React.js' , 
                             percent : '40'
                         },
@@ -137,6 +145,10 @@ module.exports = {
                     skillsKey: 'skills_3' , 
                     skillsTitle : 'متفرقه' , 
                     elements : [
+                        {
+                            name : 'nodejs' , 
+                            percent : '20'
+                        },
                         {
                             name : 'nodejs' , 
                             percent : '20'
@@ -187,6 +199,35 @@ module.exports = {
                     desc : 'ماین، سامانه هوشمند حمل‌ونقل، پل ارتباطی میان کاربر مسافر و کاربر راننده است و راهکاری سریع و ساده برای درخواست خودرو و موتورسیکلت به شمار می‌رود. با درخواست خودرو یا موتورسیکلت در این اپلیکیشن، پس از مشخص کردن مبدا و مقصد، نزدیک‌ترین ماین به نشانی شما می‌آید. با ماین سفری ایمن، راحت و مقرون‌به‌صرفه را تجربه خواهید کرد.',
                     decoration : 'img_right' ,
                     imgSrc : "http://minetaxi.ir/assets/images/mine/faq.png"
+                }
+            ]
+        },
+        blog : {
+            title : 'آخرین مطالب' , 
+            title_meta : 'یک وبلاگ باحال داریم که <kbd>RealTime</kbd> هستش ' ,
+            elements : [
+                {
+                    key : 'blog_1' , 
+                    title : 'آموزش پروژه محور زحر مار' , 
+                    desc : 'با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان می باشد',
+                    author : 'مهدی پاکروان' , 
+                    timeToRead : '2 دقیقه زمان میبره !',
+                    imgSrc : 'https://roocket.ir/public/image/2018/1/21/1516505980bootstrap4-cover-1.jpg'
+                },
+                {
+                    key : 'blog_2' , 
+                    title : 'آموزش پروژه محور زحر مار' , 
+                    desc : 'با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان می باشد',
+                    author : 'مهدی پاکروان' , 
+                    timeToRead : '2 دقیقه زمان میبره !',
+                    imgSrc : 'https://roocket.ir/public/image/2018/1/21/1516505980bootstrap4-cover-1.jpg'
+                },{
+                    key : 'blog_3' , 
+                    title : 'آموزش پروژه محور زحر مار' , 
+                    desc : 'با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان می باشد',
+                    author : 'مهدی پاکروان' , 
+                    timeToRead : '2 دقیقه زمان میبره !',
+                    imgSrc : 'https://roocket.ir/public/image/2018/1/21/1516505980bootstrap4-cover-1.jpg'
                 }
             ]
         }

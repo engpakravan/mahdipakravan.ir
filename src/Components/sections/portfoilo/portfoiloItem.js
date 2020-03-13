@@ -8,7 +8,7 @@ function PortfoiloItem(props){
         props.decoration === 'img_right'
             ? (
                 <div>
-                <Row className="py-5">
+                <Row className="py-53">
                     <Col lg={8} className="d-flex flex-column justify-content-center d-lg-block order-lg-2 order-2">
                         <div className="portfoilo__title d-flex align-items-baseline">
                             <span className="portfoilo__count">{props.order}</span>
@@ -33,12 +33,11 @@ function PortfoiloItem(props){
                         <img src={props.imgSrc} alt="" className="img-fluid portfoilo__img"/>
                     </Col>
                 </Row>
-                <hr/>
                 </div>
             )
             : (
                 <div>
-                    <Row className="py-5">
+                    <Row className="py-3">
                         <Col lg={8} className="d-flex flex-column justify-content-center d-lg-block order-lg-1 order-2">
                             <div className="portfoilo__title d-flex align-items-baseline">
                                 <span className="portfoilo__count">{props.order}</span>
@@ -63,7 +62,6 @@ function PortfoiloItem(props){
                             <img src={props.imgSrc} alt="" className="img-fluid portfoilo__img"/>
                         </Col>
                     </Row>
-                    <hr/>
                 </div>
             )
     )
