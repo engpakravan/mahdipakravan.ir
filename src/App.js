@@ -10,7 +10,14 @@ import './App.css';
 import Header from './Components/Header/header'
 import HowWorking from './Components/sections/howWorking/HowWorkings'
 import Skills from './Components/sections/skills/skillsSection'
+import Portfoilo from './Components/sections/portfoilo/PortfoiloSection'
+import Blog from './Components/sections/blog/blogSections'
+import Footer from './Components/sections/footer/1LineFooter'
 
+//Import Elements Here
+import MoreBtn from './Components/Elements/MoreBtn'
+
+//Import Context Here
 import ThemeContext from './Context/ThemeContext'
 import MethodContext from './Context/MethodsContext'
 
@@ -32,6 +39,11 @@ class App extends React.Component {
           <Header/>
           <HowWorking />
           <Skills />
+          <Portfoilo/>
+          <MoreBtn text="دیدن بقیه نمونه کار ها..." link="portfoilo"/>
+          <Blog/>
+          <MoreBtn text="دیدن بقیه نمونه کار ها..." link="portfoilo"/>
+          <Footer text="به انتهای این صفحه رسیدیم :)"/>
         </ThemeContext.Provider>
       </MethodContext.Provider>
       </div>
