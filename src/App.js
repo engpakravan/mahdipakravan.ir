@@ -4,7 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Vazir.css'
 import './App.css';
 
-//Import ContextHelper
+//Import Router
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 //Import Component Here
 import Header from './Components/Header/header'
@@ -16,6 +21,7 @@ import Footer from './Components/sections/footer/1LineFooter'
 
 //Import Elements Here
 import MoreBtn from './Components/Elements/MoreBtn'
+import MyJumborton from './Components/Elements/MyJumbotron'
 
 //Import Context Here
 import ThemeContext from './Context/ThemeContext'
@@ -31,24 +37,68 @@ class App extends React.Component {
   
   render(){
     return (
-      <div className="App">
-      <MethodContext.Provider value={{
-        Comp_To_Html : this.Comp_To_Html.bind(this)
-      }}>
-        <ThemeContext.Provider value={this.state}>
-          <Header/>
-          <HowWorking />
-          <Skills />
-          <Portfoilo/>
-          <MoreBtn text="دیدن بقیه نمونه کار ها..." link="portfoilo"/>
-          <Blog/>
-          <MoreBtn text="دیدن بقیه نمونه کار ها..." link="portfoilo"/>
-          <Footer text="به انتهای این صفحه رسیدیم :)"/>
-        </ThemeContext.Provider>
-      </MethodContext.Provider>
-      </div>
+      <Router>
+        <Switch>
+        <Route exact path="/">
+          <MethodContext.Provider value={{Comp_To_Html : this.Comp_To_Html.bind(this)}}>
+            <ThemeContext.Provider value={this.state}>
+              <Home/>
+            </ThemeContext.Provider>
+          </MethodContext.Provider>
+        </Route>
+
+        <Route path="/portfoilo">
+          <ThemeContext.Provider value={this.state}>
+            <PortfoiloSection/>
+          </ThemeContext.Provider>
+        </Route>
+
+        <Route path="/blog">
+          <ThemeContext.Provider value={this.state}>
+            <Weblog/>
+          </ThemeContext.Provider>
+        </Route>
+        </Switch>
+      </Router>
     );
   }
+}
+
+function Home(){
+  return(
+    <div className="App">
+      <Header HeaderJumborton={true} />
+        <HowWorking />
+        <Skills />
+        <Portfoilo/>
+        <MoreBtn text="دیدن بقیه نمونه کار ها..." link="portfoilo"/>
+        <Blog/>
+        <MoreBtn text="دیدن بقیه نمونه کار ها..." link="portfoilo"/>
+      <Footer text="به انتهای این صفحه رسیدیم :)"/>
+    </div>
+  )
+}
+
+function Weblog(){
+  return(
+    <div className="App">
+      <Header/>
+      <MyJumborton title="به وبلاگ خوش آمدید" desc="تو اینجا یک سری چرت و پرت داریم"/>
+      <Blog/>
+      <Footer text="به انتهای صفحه رسیدیم !"/>
+    </div>
+  )
+}
+
+function PortfoiloSection(){
+  return(
+    <div className="App">
+      <Header/>
+      <MyJumborton title="نمونه کار ها" desc="این جا هم نمونه کار هاست دیگه"/>
+      <Portfoilo/>
+      <Footer text="به انتهای این صفحه رسیدیم :)"/>
+    </div>
+  )
 }
 
 export default App;

@@ -9,7 +9,6 @@ import MethodContext from '../../Context/MethodsContext'
 class Header extends React.Component{
     static contextType = ThemeContext
     state = {
-        HeaderJumborton : this.context.Header.HeaderJumborton ,
         Brand : this.context.Header.Brand , 
         list : this.context.Header.list ,
         Welcome : this.context.Header.Welcome ,
@@ -27,7 +26,7 @@ class Header extends React.Component{
     
     render(){
         return (
-            this.state.HeaderJumborton ? (
+            this.props.HeaderJumborton ? (
                 <header>
                 <NavBar title={this.state.Brand} list={this.state.list} />
                 <Container>
@@ -53,7 +52,7 @@ class Header extends React.Component{
                 </Container>
                 </header>
             ) : (
-                <header>
+                <header className="mb-5">
                     <NavBar title={this.context.Header.Brand} list={this.context.Header.list} />
                 </header>
             )

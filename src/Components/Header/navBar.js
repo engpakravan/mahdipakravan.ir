@@ -1,11 +1,14 @@
 import React from 'react'
 import {Navbar , Nav} from 'react-bootstrap'
+import {
+    Link
+} from "react-router-dom";
 
 class navBar extends React.Component{
     
     getBrand(arg){
         return (
-            <Navbar.Brand href="/home"> {arg[0]} 
+            <Navbar.Brand href="/"> {arg[0]} 
                 <span className="text-red"> {arg[1]} </span>
             </Navbar.Brand>
         )
@@ -13,7 +16,7 @@ class navBar extends React.Component{
 
     render(){
         return (
-            <Navbar expand="lg">
+            <Navbar expand="lg" className="fixed-top" id="navHeader">
                 {this.getBrand(this.props.title)}
 
                 <Navbar.Toggle aria-controls="navHeader"/>
@@ -22,10 +25,11 @@ class navBar extends React.Component{
                     <Nav className="mr-lg-4 text-center mt-3 mt-lg-0">
                         {
                             this.props.list.map((val)=>{
-                                return <Nav.Link href={val.href} key={
-                                    //TODO Get it From Server
-                                    'navHeader_'+Math.floor(Math.random() * 9849489)}
-                                >{val.name}</Nav.Link>
+                                return <Link className="nav-link d-flex align-items-start" key={val.id} to={val.href}>{val.name}{
+                                    val.new === true 
+                                        ? (<span className="badge badge-danger mr-1">جدید</span>)
+                                        : (<div></div>)
+                                }</Link>
                             })
                         }
                     </Nav>

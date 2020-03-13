@@ -7,17 +7,18 @@ module.exports = {
           {
               id : 1 , 
               name : 'خانه' ,
-              href : "/home"
+              href : "/"
           },
           {
               id : 2 , 
-              name : 'چطوری کار میکنیم ؟' ,
-              href : "/howWorking"
+              name : 'وبلاگ' ,
+              href : "/blog"
           },
           {
               id : 3 , 
-              name : 'توانایی ها' ,
-              href : "/skills"
+              name : 'Game Center' ,
+              href : "/gameCenter" ,
+              new : true
           },
           {
               id : 4 , 
@@ -36,8 +37,8 @@ module.exports = {
     },
     Sections : {
         howWorking : {
-            title : 'چطوری با هیسم پروژه میسازیم ؟' , 
-            title_meta : 'یک وبلاگ باحال هم داریم که <kbd>RealTime</kbd> هم هستش !' ,
+            title : 'چطوری با هم پروژه میسازیم ؟' , 
+            title_meta : 'من روی <kbd>تمام مراحل</kbd> پیاده سازی کسب و کار شما حساسم !' ,
             elements : [
                 {
                     //TODO Get it From Server

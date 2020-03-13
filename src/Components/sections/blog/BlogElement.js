@@ -13,7 +13,7 @@ function BlogElement(props){
                 </Card.Body>
 
                 <Card.Footer className="d-flex justify-content-between align-items-center">
-                    <span class="text-red">{props.author}</span>
+                    <span className="text-red">{props.author}</span>
                     <span>{props.timeToRead}</span>
                 </Card.Footer>
             </Card>

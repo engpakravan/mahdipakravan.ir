@@ -46,7 +46,17 @@ kbd{
 
 header{
   background-image: linear-gradient(90deg , rgb(236, 236, 236) , rgb(252, 249, 249));
-  /* padding-bottom: 12px; */
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar{
+  background-image: linear-gradient(90deg , rgb(236, 236, 236) , rgb(252, 249, 249));
+  transition: .4s ease;
+}
+
+.navbar.scrolling{
+  transition: .4s ease;
+  padding-top: 5px;
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
@@ -233,3 +243,7 @@ a.nav-link:hover{
   background-color: #212529;
 }
 
+.jumbotron{
+  background-color: rgba(0, 0, 0, 0.61) !important;
+  color: #F7F7F7;
+}
