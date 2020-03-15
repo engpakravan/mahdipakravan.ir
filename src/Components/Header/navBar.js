@@ -25,9 +25,11 @@ class navBar extends React.Component{
                     <Nav className="mr-lg-4 text-center mt-3 mt-lg-0">
                         {
                             this.props.list.map((val)=>{
-                                return <Link className="nav-link d-flex align-items-start" key={val.id} to={val.href}>{val.name}{
-                                    val.new === true 
-                                        ? (<span className="badge badge-danger mr-1">جدید</span>)
+                                return <Link className={`nav-link d-flex align-items-start ${val.disabled === true ? ('disabled') : ('')}`} key={val.id} to={val.href}>
+                                        {val.name}
+                                    {
+                                    val.badge && val.badge.status === true 
+                                        ? (<span className="badge badge-danger mr-1">{val.badge.text}</span>)
                                         : (<div></div>)
                                 }</Link>
                             })

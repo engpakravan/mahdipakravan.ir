@@ -5,7 +5,7 @@ function PortfoiloItem(props){
     const Constants = props.Constants
     props = props.data
     return (
-        props.decoration === 'img_right'
+        props.order %2 === 0
             ? (
                 <div>
                 <Row className="py-53">

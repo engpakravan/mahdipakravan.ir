@@ -11,6 +11,7 @@ function HowWorking(){
     const methods = useContext(MethodsContext)
 
     const [state] = useState(context)
+    let order = 0
     return (
         <div className="section__howWorking pb-4">
             <Container>
@@ -19,6 +20,7 @@ function HowWorking(){
                 
                 {
                     state.elements.map((val) => {
+                        order++
                         return (
                             <HowWorkingElement key={val.key} display={
                             {
@@ -26,7 +28,8 @@ function HowWorking(){
                                 stepText : val.stepText ,
                                 hyperText : val.hyperText ,
                                 bodyText : val.bodyText ,
-                                imageSource : val.imageSource
+                                imageSource : val.imageSource,
+                                order : order
                             }
                             } methods = {methods} />
                         )

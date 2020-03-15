@@ -9,7 +9,7 @@ function SkillsItems(props){
            <div className="skills">
                 {
                     props.childs.map(val =>{
-                        return <Progress progress={val.percent} key={Math.floor(Math.random() * 200)} skillName={val.name} />
+                        return <Progress progress={val.percent} key={Math.floor(Math.random() * 987969)} skillName={val.name} />
                     })
                 }
            </div>        

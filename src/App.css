@@ -241,9 +241,17 @@ a.nav-link:hover{
 */
 .section__footer{
   background-color: #212529;
+  width: 100%;
 }
 
 .jumbotron{
   background-color: rgba(0, 0, 0, 0.61) !important;
   color: #F7F7F7;
+}
+
+.blog__back .card{
+  width: 20rem;
+  height: 27rem;
+  margin: 2rem 1rem;
+  float: right;
 }

@@ -11,18 +11,37 @@ class PortfoiloSection extends React.Component{
     state = this.context.Sections.portfoilo
 
     render(){
+        let order = 0
         return (
             <MethodsContext.Consumer>
             {
                 methods => (
                     <div className="section__portfoilo">
                     <Container>
-                        <h4 className="text-center">{this.state.title}</h4>
-                        <h6 className="text-center pt-2">{methods.Comp_To_Html(this.state.title_meta)}</h6>
+                        {
+                            this.props.noTitle 
+                            ? ('')
+                            : (
+                                <div>
+                                <h4 className="text-center">{this.state.title}</h4>
+                                <h6 className="text-center pt-2">{methods.Comp_To_Html(this.state.title_meta)}</h6>
+                                </div>
+                            )
+                        }
 
-                        {this.state.elements.map(val => {
-                            return <PortfoiloItem data={val} key={val.order} Constants={this.state.Constant_data} />
-                        })}
+                        {
+                            this.props.type=== 'section' ? (
+                                <div>
+                                <PortfoiloItem data={this.state.elements[0]} key={this.state.elements[0].order} Constants={this.state.Constant_data} order={1}/>
+                                <PortfoiloItem data={this.state.elements[1]} key={this.state.elements[1].order} Constants={this.state.Constant_data} order={2}/>
+                                </div>
+                                ) : (
+                                this.state.elements.map(val => {
+                                order++
+                                return <PortfoiloItem data={val} key={val.order} Constants={this.state.Constant_data} order={order}/>
+                                })
+                            )
+                        }
                     </Container>
                     </div>
                 )

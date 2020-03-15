@@ -13,7 +13,7 @@ function howWorking_Element(props){
     const Method = props.methods
     const Props = props.display
     return(
-        Props.decoration === 'img_right' ? (
+        Props.order%2 === 0 ? (
             <div>
                 <Row className="pt-4 d-flex align-items-center" key={Props.key}>
                     <Col key={Props.key} lg={8} className="d-flex flex-column justify-content-center d-lg-block order-2 order-lg-1">

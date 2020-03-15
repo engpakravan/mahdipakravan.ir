@@ -70,10 +70,10 @@ function Home(){
       <Header HeaderJumborton={true} />
         <HowWorking />
         <Skills />
-        <Portfoilo/>
+        <Portfoilo type={'section'}/>
         <MoreBtn text="دیدن بقیه نمونه کار ها..." link="portfoilo"/>
-        <Blog/>
-        <MoreBtn text="دیدن بقیه نمونه کار ها..." link="portfoilo"/>
+        <Blog type={'section'}/>
+        <MoreBtn text="دیدن بقیه مطالب ..." link="portfoilo"/>
       <Footer text="به انتهای این صفحه رسیدیم :)"/>
     </div>
   )
@@ -84,7 +84,7 @@ function Weblog(){
     <div className="App">
       <Header/>
       <MyJumborton title="به وبلاگ خوش آمدید" desc="تو اینجا یک سری چرت و پرت داریم"/>
-      <Blog/>
+      <Blog type={'all'} noTitle={true}/>
       <Footer text="به انتهای صفحه رسیدیم !"/>
     </div>
   )
@@ -95,7 +95,7 @@ function PortfoiloSection(){
     <div className="App">
       <Header/>
       <MyJumborton title="نمونه کار ها" desc="این جا هم نمونه کار هاست دیگه"/>
-      <Portfoilo/>
+      <Portfoilo  noTitle={true} type={'all'}/>
       <Footer text="به انتهای این صفحه رسیدیم :)"/>
     </div>
   )
