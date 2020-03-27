@@ -255,3 +255,19 @@ a.nav-link:hover{
   margin: 2rem 1rem;
   float: right;
 }
+
+.customSpinner{
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.programmer_pic{
+  position: relative;
+}
+
+.blur{
+  opacity: .2;
+}

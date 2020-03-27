@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Spinner , Alert} from 'react-bootstrap'
 import './Vazir.css'
 import './App.css';
 
@@ -34,32 +35,69 @@ class App extends React.Component {
   Comp_To_Html(element){
     return <div dangerouslySetInnerHTML={{__html : element}} />
   }
+
+  get_spinner(){
+    return (
+      <div className="mt-5 d-flex justify-content-center align-items-center flex-column customSpinner">
+          <h6>در حال دریافت از سرور</h6>
+          <p>فعلا از بقیه وبسایت استفاده کنید اینم الان میاد !</p>
+          <br/>
+          <Spinner animation="grow" />
+      </div>
+    )
+  }
+
+  errorComponent(){
+    return (
+      <div className="w-100 d-flex justify-content-center align-items-start pt-4">
+        <Alert key={`Error_${Math.random()}`} variant={'danger'}>
+          <Spinner animation="grow" />
+          <h6 className="pr-3">هنگام دریافت اطلاعات مشکلی پیش آمده</h6>
+        </Alert>  
+      </div>
+    )
+  }
+
+  get_spinner_w100(){
+    return (
+        <div className="w-100 d-flex justify-content-center align-items-start pt-4">
+          <Spinner animation="grow" />
+          <h6 className="pr-3">در حال دریافت اطلاعات...</h6>
+        </div>
+      )
+  }
   
   render(){
     return (
+      <MethodContext.Provider value={{
+        Comp_To_Html : this.Comp_To_Html.bind(this) , 
+        get_spinner : this.get_spinner.bind(this) ,
+        get_spinner_w100 : this.get_spinner_w100.bind(this) ,
+        errorComponent : this.errorComponent.bind(this) ,
+      }}>
       <Router>
         <Switch>
         <Route exact path="/">
-          <MethodContext.Provider value={{Comp_To_Html : this.Comp_To_Html.bind(this)}}>
             <ThemeContext.Provider value={this.state}>
               <Home/>
             </ThemeContext.Provider>
-          </MethodContext.Provider>
         </Route>
 
-        <Route path="/portfoilo">
+        <Route path="/portfoilo"> 
           <ThemeContext.Provider value={this.state}>
             <PortfoiloSection/>
           </ThemeContext.Provider>
         </Route>
 
         <Route path="/blog">
+        
           <ThemeContext.Provider value={this.state}>
             <Weblog/>
           </ThemeContext.Provider>
-        </Route>
-        </Switch>
-      </Router>
+            </Route>
+          </Switch>
+        </Router>
+      </MethodContext.Provider>
     );
   }
 }

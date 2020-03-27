@@ -15,7 +15,7 @@ function howWorking_Element(props){
     return(
         Props.order%2 === 0 ? (
             <div>
-                <Row className="pt-4 d-flex align-items-center" key={Props.key}>
+                <Row className="pt-4 d-flex align-items-center">
                     <Col key={Props.key} lg={8} className="d-flex flex-column justify-content-center d-lg-block order-2 order-lg-1">
                         {getStepText(Props.stepText , Props.hyperText)}
                         <div className="pt-3 p text-center text-lg-right">{Method.Comp_To_Html(Props.bodyText)}</div>
